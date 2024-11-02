@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fdf3f3;
+    color: #333;
+}
+
+header {
+    background-color: #fcdede;
+    width: 100%;
+    padding: 10px 0; /* Aumenta o padding superior e inferior */
+    display: flex;
+    justify-content: center; /* Centraliza os links de navegação */
+    align-items: center;
+    position: relative;
+    min-height: 100px; /* Aumenta a altura mínima da header */
+}
+
+.logo {
+    width: 60px;
+    position: absolute;
+    left: 40px; /* Move a logo mais para o canto esquerdo */
+}
+
+header nav {
+    display: flex;
+    gap: 25px; /* Aumenta o espaçamento entre os links */
+}
+
+header nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header nav a:hover {
+    color: #D4456C;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px); /* Centraliza o conteúdo verticalmente */
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    max-width: 1400px; /* Aumenta o tamanho máximo da área de conteúdo */
+}
+
+.home-image {
+    width: 800px; 
+    margin-right: 80px; /* Ajuste da margem para manter a imagem separada do texto */
+    transform: translateX(-140px); /* Move a imagem mais à esquerda */
+}
+
+.welcome-message {
+    max-width: 700px; /* Define a largura máxima da área de texto */
+    text-align: left;
+}
+
+h1 {
+    color: #D4456C;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #333;
+    font-size: 2.0rem;
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
+    font-weight: bold;
+}
+
+.highlight {
+    color: #F4A9B6;
+    font-weight: bold;
+}
