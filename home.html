@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Blomera</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <!-- Área Principal (Home) -->
@@ -14,7 +15,7 @@
             <a href="home.html">O Praeando</a>
             <a href="landing.html">Nossa Landing</a>
             <a href="pesquisa.html" target="_blank">Pesquisa de Perfil</a>
-            <a href="login.html">Logout</a>
+            <a href="#" onclick="logout()">Logout</a>
         </nav>
     </header>
     
@@ -27,5 +28,23 @@
             </div>
         </div>
     </div>
+
+    <div class="login-sidebar" id="loginSidebar">
+        <h2>Blomera</h2>
+        <p>Bem vindo à área Restrita</p>
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" required>
+            <div>
+                <input type="checkbox" id="lembrar">
+                <label for="lembrar">Lembrar de mim</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
 </body>
 </html>

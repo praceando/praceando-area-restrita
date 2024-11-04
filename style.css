@@ -47,24 +47,23 @@ header nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 120px); /* Centraliza o conteúdo verticalmente */
+    height: calc(100vh - 120px); 
     padding: 20px;
 }
 
 .content {
     display: flex;
     align-items: center;
-    max-width: 1400px; /* Aumenta o tamanho máximo da área de conteúdo */
+    max-width: 1400px; 
 }
 
 .home-image {
-    width: 800px; 
-    margin-right: 80px; /* Ajuste da margem para manter a imagem separada do texto */
-    transform: translateX(-140px); /* Move a imagem mais à esquerda */
+    width: 500px; 
+    margin-right: 80px; 
 }
 
 .welcome-message {
-    max-width: 700px; /* Define a largura máxima da área de texto */
+    max-width: 700px; 
     text-align: left;
 }
 
@@ -78,11 +77,60 @@ h1 {
 p {
     color: #333;
     font-size: 2.0rem;
-    line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
+    line-height: 1.6;
     font-weight: bold;
 }
 
 .highlight {
     color: #F4A9B6;
     font-weight: bold;
+}
+
+.login-sidebar {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #D4456C;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    display: none; 
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.login-sidebar label, .login-sidebar input, .login-sidebar button {
+    width: 100%;
+}
+
+.login-sidebar input {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+.login-sidebar button {
+    background-color: #8B0000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    display: none;
+    z-index: 10; 
 }
