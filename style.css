@@ -37,7 +37,7 @@ header {
 .logo {
     width: 50px;
     position: absolute;
-    left: 20px;
+    left: 30px;
 }
 
 header nav {
@@ -49,7 +49,7 @@ header nav a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 header nav a:hover {
@@ -238,6 +238,22 @@ header nav a:last-child {
     display: none;
     z-index: 10;
 }
+.centered-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5rem; 
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+iframe {
+    max-width: 90%;
+    height: 400px; 
+}
 
 @media (max-width: 768px) {
     .main-container {
@@ -279,3 +295,4 @@ header nav a:last-child {
         font-size: 0.9rem;
     }
 }
+
