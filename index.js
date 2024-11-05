@@ -6,6 +6,7 @@ if (!isLoggedIn) {
     loginSidebar.style.display = 'flex';
     overlay.style.display = 'block';
 } else {
+    loginSidebar.style.display = 'none';
     overlay.style.display = 'none';
 }
 
