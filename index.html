@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Blomera</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./scripts/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo Blomera" class="logo">
+        <nav>
+            <a href="index.html">O Praceando</a>
+            <a href="landing.html">Nossa Landing</a>
+            <a href="pesquisa.html">Pesquisa de Perfil</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+    
+    <div class="main-container">
+        <div class="content">
+            <img src="images/home-image.png" alt="Imagem de Bem-Vindo" class="home-image">
+            <div class="welcome-message">
+                <h1>Bem vindo, Admin!</h1>
+                <p>Aqui você verá <span class="highlight">dashboards</span> e <span class="highlight">informações</span> sobre o andamento do app <span class="highlight">Praceando</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-sidebar" id="loginSidebar">
+        <div class="logo-container">
+            <img src="images/sidebar-logo.png" alt="Logo Blomera" class="sidebar-logo">
+        </div>
+
+        <p>Bem-vindo à área Restrita</p>
+        
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" required>
+            <div class="checkbox-container">
+                <input type="checkbox" id="lembrar">
+                <label for="lembrar" class="checkbox-label">Lembrar de mim</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="errorMessage" class="error-message" style="display:none;">Acesso negado: Apenas administradores podem logar.</p>
+        <p id="loadingMessage" style="display:none;">Carregando...</p>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>

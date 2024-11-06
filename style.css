@@ -1,0 +1,316 @@
+:root {
+    --background-color: #fdf3f3;
+    --header-bg-color: #fcdede;
+    --primary-color: #D4456C;
+    --highlight-color: #F4A9B6;
+    --sidebar-bg-color: #D4456C;
+    --input-bg-color: #f4f4f4;
+    --button-bg-color: #F4A9B6;
+    --button-hover-bg-color: #fcc4c4;
+    --text-color: #333;
+    --text-light-color: #fff;
+    --error-msg: #F4A9B6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-bg-color);
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100px;
+}
+
+.logo {
+    width: 50px;
+    position: absolute;
+    left: 30px;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.home-image {
+    width: 500px;
+    margin-right: 30px;
+}
+
+.welcome-message {
+    max-width: 600px;
+    text-align: left;
+}
+
+.welcome-message h1 {
+    color: var(--primary-color);
+    font-weight: bold;
+    display: none;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.welcome-message p {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.highlight {
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+.login-sidebar {
+    padding: 30px 40px;
+    width: 30vw;
+    max-width: 400px;
+    min-width: 300px;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--sidebar-bg-color);
+    color: var(--text-light-color);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-sidebar .sidebar-logo {
+    width: 290px;
+    margin-bottom: 20px;
+}
+
+.login-sidebar p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-sidebar label {
+    font-size: 1.2rem;
+    color: var(--text-light-color);
+    margin-bottom: 5px;
+    align-self: flex-start;
+}
+
+.login-sidebar input[type="email"],
+.login-sidebar input[type="password"] {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: none;
+    font-size: 1.2rem;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: var(--button-bg-color);
+    border-color: var(--button-bg-color);
+}
+
+.checkbox-container input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background-color: #fff;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-light-color);
+}
+
+.login-sidebar button {
+    background-color: var(--button-bg-color);
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--text-light-color);
+    width: 100%;
+    max-width: 350px;
+}
+
+.login-sidebar button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
+    z-index: 10;
+}
+
+.centered-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem; 
+    margin-top: 25px;
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.iframe-container iframe {
+    border: none;
+    width: 100%; 
+    max-width: 900px; 
+    margin: 0;
+}
+
+#errorMessage {
+    color: var(--error-msg);
+    font-size: 1rem; 
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 250px;
+}
+
+#loadingMessage {
+    color: var(--background-color);
+    font-size: 1rem; 
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 250px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 5px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-image {
+        width: 70%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .welcome-message h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-message p {
+        font-size: 1.5rem;
+    }
+
+    .login-sidebar {
+        width: 80vw;
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .login-sidebar input[type="email"],
+    .login-sidebar input[type="password"] {
+        font-size: 1rem;
+    }
+
+    .login-sidebar button {
+        font-size: 0.9rem;
+    }
+}
+
