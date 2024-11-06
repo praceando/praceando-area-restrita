@@ -1,15 +1,16 @@
 const loginSidebar = document.getElementById('loginSidebar');
+const isLoggedIn = localStorage.getItem('isLoggedIn');
 const overlay = document.getElementById('overlay');
 const wecomeMessage = document.querySelector('.welcome-message h1')
 
-if (!checkLoginStatus()) {
+if (!isLoggedIn) {
     loginSidebar.style.display = 'flex';
     overlay.style.display = 'block';
-    wecomeMessage.display = 'none';
+    wecomeMessage.style.display = 'none';
 } else {
     loginSidebar.style.display = 'none';
     overlay.style.display = 'none';
-    wecomeMessage.display = 'inline';
+    wecomeMessage.style.display = 'block';
 }
 
 document.getElementById('loginForm').addEventListener('submit', async function(event) {
@@ -24,8 +25,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     loadingMessage.style.display = 'block';
 
     try {
-        // https://praceando-api-pg.onrender.com/api/usuario/login
-        const response = await fetch('http://localhost:8083/api/usuario/login', {
+        // Produção: https://praceando-api-pg.onrender.com/api/usuario/login
+        // Desenvolvimento: http://localhost:8083/api/usuario/login
+        const response = await fetch('https://praceando-api-pg.onrender.com/api/usuario/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +38,8 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         loadingMessage.style.display = 'none';
 
         if (response.ok) {
-            document.cookie = "isLoggedIn=true; path=/; secure; samesite=strict";
+            localStorage.setItem('isLoggedIn', 'true');
+            
             window.location.reload();
         } else {
             errorMessage.style.display = 'block';
@@ -48,13 +51,6 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 });
 
 function logout() {
-    document.cookie = "isLoggedIn=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    localStorage.removeItem('isLoggedIn'); 
     window.location.reload();
-}
-
-function checkLoginStatus() {
-    const cookies = document.cookie.split('; ');
-    const isLoggedIn = cookies.find(row => row.startsWith('isLoggedIn='));
-
-    return isLoggedIn && isLoggedIn.split('=')[1] === 'true';
 }
