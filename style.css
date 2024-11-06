@@ -9,6 +9,7 @@
     --button-hover-bg-color: #fcc4c4;
     --text-color: #333;
     --text-light-color: #fff;
+    --error-msg: #F4A9B6;
 }
 
 * {
@@ -56,12 +57,6 @@ header nav a:hover {
     color: var(--primary-color);
 }
 
-header nav a:last-child {
-    margin-left: auto;
-    color: var(--text-color);
-    font-weight: bold;
-}
-
 .main-container {
     display: flex;
     justify-content: center;
@@ -90,6 +85,7 @@ header nav a:last-child {
 .welcome-message h1 {
     color: var(--primary-color);
     font-weight: bold;
+    display: none;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
@@ -238,6 +234,7 @@ header nav a:last-child {
     display: none;
     z-index: 10;
 }
+
 .centered-title {
     text-align: center;
     margin-bottom: 20px;
@@ -251,9 +248,29 @@ header nav a:last-child {
     margin-bottom: 20px;
 }
 
-iframe {
-    max-width: 90%;
-    height: 400px; 
+.iframe-container iframe {
+    border: none;
+    width: 100%; 
+    max-width: 900px; 
+    margin: 0;
+}
+
+#errorMessage {
+    color: var(--error-msg);
+    font-size: 1rem; 
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 250px;
+}
+
+#loadingMessage {
+    color: var(--background-color);
+    font-size: 1rem; 
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 250px;
 }
 
 @media (max-width: 768px) {
