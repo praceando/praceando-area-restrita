@@ -19,7 +19,7 @@ A área administrativa foi projetada para facilitar a visualização e o control
 
 ## Funcionalidades Principais
 
-- **Não sei as funcionalidades**: perguntar pro pessoal de dados
+- Apresentar Dashboard de Análise do Público. Ele exibe dados coletados através de um formulário que foi feito, para que nos permita uma análise detalhada do perfil e comportamento do um futúro público do app. Este painel facilita o acompanhamento das preferências dos usuários, ajudando na criação de estratégias mais direcionadas e na melhoria contínua dos serviços oferecidos.
 
 ## Estrutura do Projeto
 
